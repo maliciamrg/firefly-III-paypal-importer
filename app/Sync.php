@@ -32,6 +32,10 @@ class Sync
             $date = Carbon::now();
         }
 
+        if ($date->lt(Carbon::now()->subYears(3))) {
+            return;
+        }
+
         // PayPal was founded in 1998
         if ($date->year < 1998) {
             return;
